@@ -1,0 +1,11 @@
+%section#top
+  .text-block
+    .top-logo
+      %h1 Tattoo Master Base
+    %input.email.login{:pattern => "[A-Za-z А-Яа-я]{3,32}", :placeholder => "логин", :required => "", :type => "email"}/
+    %input.password.login{:pattern => "[A-Za-z А-Яа-я]{3,32}", :placeholder => "пароль", :required => "", :type => "password"}/
+    .regist
+      .circle.left
+        %a{:href => "#"} Регистрация
+      .circle.right
+        %a{:href => "#"} Вход

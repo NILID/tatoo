@@ -1,0 +1,10 @@
+!!!
+%html(lang="ru")
+  = render 'header'
+  %body
+    %section#top
+      .text-block
+        .top-logo
+          %h1 Tattoo Master Base
+        = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

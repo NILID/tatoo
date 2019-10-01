@@ -1,0 +1,13 @@
+ru:
+  activerecord:
+    models:
+      user: пользователь
+    attributes:
+      user:
+        login: логин
+        password: пароль
+        password_confirmation: повторите пароль
+        current_password: Текущий пароль
+        created_at: Зарегистрировался
+        last_sign_in_at: Последнее посещение
+        sign_in_count: Количество посещений

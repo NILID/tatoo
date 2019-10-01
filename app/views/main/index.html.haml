@@ -1,11 +1,83 @@
-%section#top
-  .text-block
-    .top-logo
-      %h1 Tattoo Master Base
-    %input.email.login{:pattern => "[A-Za-z А-Яа-я]{3,32}", :placeholder => "логин", :required => "", :type => "email"}/
-    %input.password.login{:pattern => "[A-Za-z А-Яа-я]{3,32}", :placeholder => "пароль", :required => "", :type => "password"}/
-    .regist
-      .circle.left
-        %a{:href => "#"} Регистрация
-      .circle.right
-        %a{:href => "#"} Вход
+- set_meta_tags title: 'Заказать тату'
+
+%section#content
+  .menu
+    .logo-text.left TMB
+    .avatar.right
+    .right
+      = current_user.login
+      = link_to t('devise.logout'), destroy_user_session_path, method: :delete
+
+    .right.message{ title: "Сообщения"}
+    .right.marker{ title: "Закладки" }
+  .container
+    .filtration.left
+      %h3 Фильтрация
+      %p.lh По цене:
+      %p
+        %input{:type => "checkbox"}/
+        от 500 до 2000
+      %p
+        %input{:type => "checkbox"}/
+        от 2000 до 5000
+      %p
+        %input{:type => "checkbox"}/
+        от 5000 до 10 000
+      %br/
+      %p.lh По цвету:
+      %p
+        %input{:type => "checkbox"}/
+        черный
+      %p
+        %input{:type => "checkbox"}/
+        красный
+      %p
+        %input{:type => "checkbox"}/
+        белый
+      %br/
+      %p.lh По типу выполнения:
+      %p
+        %input{:type => "checkbox"}/
+        машинка
+      %p
+        %input{:type => "checkbox"}/
+        ручная работа
+      %p
+        %input{:type => "checkbox"}/
+        индукционная машинка
+    .master
+      %h3 Найдено: 258 мастеров
+      .box
+        .profile
+          .avatar.left
+          %p.left.name Ангелина Терехова
+        .box-img{:style => "background-image:url(#{image_url('1.jpg')})"}
+        %p.more Цена: от 500р до 5см
+        %p.more Цвет: черный
+        %p.more Тип: роторная машинка
+      .box
+        .profile
+          .avatar.left
+          %p.left.name Иван Сидоров
+        .box-img{:style => "background-image:url(#{image_url('2.jpg')})"}
+        %p.more Цена: от 2500р до 10см
+        %p.more Цвет: любые
+        %p.more Тип: индукционная машинка
+      .box.more-box
+        .profile
+          .avatar.left
+          %p.left.name Алексей Стриженов
+        .box-img{:style => "background-image:url(#{image_url('3.jpg')})"}
+        %p.more Цена: от 8000р до 50см
+        %p.more Цвет: любые
+        %p.more Тип: роторная машинка
+      .box.more-box
+        .profile
+          .avatar.left
+          %p.left.name Елена Сергиевич
+        .box-img{:style => "background-image:url(#{image_url('4.jpg')})"}
+        %p.more Цена: от 500р до 5см
+        %p.more Цвет: черный
+        %p.more Тип: ручная работа
+      .arrow-line
+        .arrow{ title: "Загрузить еще" }

@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  # :confirmable, :lockable, :timeoutable, :rememberable, :trackable and :omniauthable, :recoverable
+  devise :database_authenticatable,
+         :registerable,
+         :validatable
 
   attr_writer :login
 
@@ -12,7 +13,7 @@ class User < ApplicationRecord
       exclusion: { in: LOGIN_BLACKLIST },
       length: { in: 3..12 }
 
-  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
+  validates_format_of :username, with: /^[a-zA-Z0-9а-яА-Я _\.]*$/, :multiline => true
 
   def login
     @login || self.username || self.email

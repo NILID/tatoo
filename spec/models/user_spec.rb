@@ -32,7 +32,7 @@ describe User do
     end
 
     it 'have not username with specific symbols' do
-      ['log,in', 'my username', 'very-big', '<hello>'].each do |username|
+      ['log,in', 'very-big', '<hello>'].each do |username|
         user.username = username
         expect(user.valid?).to be false
         expect(user.errors[:username]).not_to be_empty

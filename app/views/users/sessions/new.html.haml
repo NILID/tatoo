@@ -1,13 +1,7 @@
-%h2 Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :login
-    %br/
-    = f.email_field :login, autofocus: true, autocomplete: "login"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
+  =# f.email_field :login, autofocus: true, autocomplete: "login", class: 'email login', placeholder: User.human_attribute_name(:login), pattern: "[A-Za-z А-Яа-я]{3,32}", required: true
+  = f.text_field :login, autofocus: true, autocomplete: "login", class: 'email login', placeholder: User.human_attribute_name(:login), pattern: "[A-Za-z А-Яа-я@.]{3,32}", required: true
+  = f.password_field :password, autocomplete: "current-password", class: 'password login', placeholder: User.human_attribute_name(:password), required: true
   - if devise_mapping.rememberable?
     .field
       = f.check_box :remember_me

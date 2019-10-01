@@ -4,7 +4,11 @@
   .field
     = f.label :username
     %br/
-    = f.email_field :username, autofocus: true, autocomplete: "login"
+    = f.text_field :username, autofocus: true, autocomplete: "login"
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autocomplete: "email"
   .field
     = f.label :password
     - if @minimum_password_length

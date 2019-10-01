@@ -18,6 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'haml-rails'
 
+gem 'meta-tags'
+
 gem 'devise'
 gem 'devise-russian'
 

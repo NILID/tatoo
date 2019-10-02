@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :registerable,
          :validatable
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
 
   attr_writer :login
 

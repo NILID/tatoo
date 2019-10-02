@@ -9,7 +9,7 @@
 
 @font-face{
 	font-family: "Text";
-	src: font-url("Text.otf") format("opentype");
+	src: font-url("text.otf") format("opentype");
 }
 
 * {
@@ -71,6 +71,7 @@ a {
 
 .logo-text {
   font: 45px 'Logo',sans-serif, Arial, Georgia;
+  color: #545454;
 }
 
 /*------------------

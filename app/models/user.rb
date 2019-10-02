@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create  :create_profile
+  after_create :init
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :rememberable, :trackable and :omniauthable, :recoverable
@@ -30,5 +30,14 @@ class User < ApplicationRecord
       elsif conditions.has_key?(:username) || conditions.has_key?(:email)
         where(conditions.to_h).first
       end
+    end
+
+
+  private
+    def init
+      self.build_profile(price: (100*rand(5..100)),
+                     work_type: Profile::WORK_TYPES.sample,
+                         color: Profile::COLORS.sample,
+                    tatoo_size: (5*rand(1..10)))
     end
 end

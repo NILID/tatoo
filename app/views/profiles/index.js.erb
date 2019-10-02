@@ -2,5 +2,7 @@ $("#profiles").append("<%= j render(@profiles) %>").fadeIn();
 
 <% if @profiles.next_page.nil?%>
   $("#next_profiles").hide();
+<% else %>
+  $("#next_profiles").attr("href", "/profiles?page=<%=@profiles.next_page%>");
 <% end %>
 

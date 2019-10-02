@@ -1,6 +1,7 @@
 ru:
   shared:
     select_choose: == Выберите ==
+    finding: 'Найдено:'
   activerecord:
     models:
       user: пользователь

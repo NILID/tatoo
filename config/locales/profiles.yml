@@ -10,3 +10,7 @@ ru:
     handwork: ручная работа
     rotary: роторная машинка
     worktypes: 'Тип: %{worktype}'
+  plural:
+    master_1: мастер
+    master_2: мастера
+    master_10: мастеров

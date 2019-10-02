@@ -2,7 +2,7 @@
 
 = render 'filtration'
 
-%h3 Найдено: 258 мастеров
+%h3 #{t 'shared.finding'} #{plural(@profiles.size, 'master')}
 
 = render @profiles
 

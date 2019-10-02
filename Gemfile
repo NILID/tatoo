@@ -20,6 +20,8 @@ gem 'haml-rails'
 
 gem 'meta-tags'
 
+gem 'ransack'
+
 gem 'devise'
 gem 'devise-russian'
 

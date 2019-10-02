@@ -3,7 +3,7 @@ class Profile < ApplicationRecord
 
   delegate :username, to: :user
 
-  COLORS = %w[black]
+  COLORS = %w[black red white]
   WORK_TYPES = %w[handwork induction rotary]
 
   def color_name

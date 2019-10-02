@@ -1,9 +1,11 @@
 ru:
   profiles:
     any_color: любой
-    colors:
-      any: 'Цвет: любой'
-      black: 'Цвет: черный'
+    any: любой
+    black: черный
+    red: красный
+    white: белый
+    colors: 'Цвет: %{color}'
     work_types:
       induction: индукционная машинка
       handwork: ручная работа

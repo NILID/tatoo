@@ -6,7 +6,7 @@
   .box-img{ style: "background-image:url(#{image_url('1.jpg')})" }
   %p.more Цена: от 500р до 5см
   %p.more
-    = t("profiles.colors.#{profile.color_name}")
+    = t('profiles.colors', color: color_name(profile.color_name))
   %p.more
     Тип: #{t("profiles.work_types.#{profile.work_type}")}
 

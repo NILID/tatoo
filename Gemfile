@@ -22,6 +22,8 @@ gem 'meta-tags'
 
 gem 'ransack'
 
+gem 'jquery-rails'
+
 gem 'devise'
 gem 'devise-russian'
 

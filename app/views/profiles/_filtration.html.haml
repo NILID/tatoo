@@ -13,7 +13,7 @@
 
     - Profile::COLORS.each do |color|
       %p
-        = f.check_box :color_eq_any, {}, color, nil
+        = f.check_box :color_eq_any, { multiple: true }, color, nil
         = get_profile_value(color)
 
     %br/
@@ -21,5 +21,5 @@
 
     - Profile::WORK_TYPES.each do |worktype|
       %p
-        = f.check_box :work_type_eq_any, {}, worktype, nil
+        = f.check_box :work_type_eq_any, { multiple: true }, worktype, nil
         = get_profile_value(worktype)

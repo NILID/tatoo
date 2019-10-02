@@ -1,23 +1,22 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
-    resource.email = "#{resource.username}_#{rand(0..10000)}@tatoo-master.com"
-    resource.password_confirmation = resource.password
-    if resource.save
-      yield resource if block_given?
-      sign_in(resource)
-      if resource.active_for_authentication?
-        set_flash_message :notice, :signed_up if is_flashing_format?
-        # sign_up(resource_name, resource)
+    @old_user = User.where(username: resource.username).or(User.where(email: resource.email)).first
+    if @old_user
+      sign_in(@old_user)
+      redirect_to root_path
+    else
+      if resource.username?
+        resource.email = "#{resource.username}_#{rand(0..999999)}@tatoo-master.com"
+        resource.password_confirmation = resource.password
+      end
+      if resource.save
+        sign_in(resource)
         respond_with resource, location: after_sign_up_path_for(resource)
       else
-        set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
-        expire_data_after_sign_in!
-        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+        clean_up_passwords resource
+        respond_with resource
       end
-    else
-      clean_up_passwords resource
-      respond_with resource
     end
   end
   protected

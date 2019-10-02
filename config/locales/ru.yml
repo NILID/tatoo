@@ -9,6 +9,7 @@ ru:
       user: пользователь
     attributes:
       user:
+        username: логин
         login: логин
         password: пароль
         password_confirmation: повторите пароль

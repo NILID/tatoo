@@ -2,8 +2,9 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[edit update]
 
   def index
+    @profiles_count = Profile.count
     @q = Profile.ransack(params[:q])
-    @profiles = @q.result(distinct: true)
+    @profiles = @q.result(distinct: true).paginate(page: params[:page], per_page: 2)
   end
 
   def edit; end

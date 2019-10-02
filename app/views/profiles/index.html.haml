@@ -2,9 +2,13 @@
 
 = render 'filtration'
 
-%h3 #{t 'shared.finding'} #{plural(@profiles.size, 'master')}
+%h3 #{t 'shared.finding'} #{plural(@profiles_count, 'master')}
 
-= render @profiles
+- if @profiles.size > 0
+  #profiles= render @profiles
 
-.arrow-line
-  .arrow{ title: "Загрузить еще" }
+  - check_next = @profiles.next_page.nil? ? 'hidden' : nil
+  .arrow-line
+    = link_to '', profiles_path(page: @profiles.next_page), remote: true, id: 'next_profiles', class: "#{check_next} arrow", title: "Загрузить еще"
+- else
+  EMPTY

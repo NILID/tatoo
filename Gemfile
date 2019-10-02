@@ -22,6 +22,8 @@ gem 'meta-tags'
 
 gem 'ransack'
 
+gem 'will_paginate'
+
 gem 'jquery-rails'
 
 gem 'devise'

@@ -1,0 +1,6 @@
+$("#profiles").append("<%= j render(@profiles) %>").fadeIn();
+
+<% if @profiles.next_page.nil?%>
+  $("#next_profiles").hide();
+<% end %>
+

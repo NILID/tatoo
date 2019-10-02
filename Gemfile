@@ -51,6 +51,11 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+group :heroku do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rails-controller-testing'

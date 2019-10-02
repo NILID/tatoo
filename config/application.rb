@@ -18,5 +18,10 @@ module Tatu
 
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
+
+    config.to_prepare do
+      Devise::SessionsController.skip_before_action :authenticate_user
+      Devise::RegistrationsController.skip_before_action :authenticate_user
+    end
   end
 end

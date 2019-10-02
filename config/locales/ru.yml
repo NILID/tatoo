@@ -1,4 +1,6 @@
 ru:
+  devise:
+    logout: Выйти
   shared:
     select_choose: == Выберите ==
     finding: 'Найдено:'

@@ -7,3 +7,23 @@
 .hidden {
   display: none;
 }
+
+.avatar {
+  position: relative;
+}
+
+.usermenu {
+  z-index: 10;
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+
+.avatar:hover .usermenu {
+  display: block;
+}

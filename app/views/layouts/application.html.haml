@@ -5,10 +5,12 @@
     %section#content
       .menu
         = link_to 'TMB', root_path, class: 'logo-text left'
+
         .avatar.right
-        .right
-          = current_user.login
-          = link_to t('devise.logout'), destroy_user_session_path, method: :delete
+          .usermenu
+            %p= current_user.login
+            %p= link_to t('devise.logout'), destroy_user_session_path, method: :delete
+
 
         .right.message{ title: "Сообщения"}
         .right.marker{ title: "Закладки" }

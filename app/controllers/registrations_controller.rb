@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
       redirect_to root_path
     else
       if resource.username?
-        resource.email = "#{resource.username}_#{rand(0..999999)}@tatoo-master.com"
+        resource.email = "#{resource.username.parameterize}_#{rand(0..999999)}@tatoo-master.com"
         resource.password_confirmation = resource.password
       end
       if resource.save

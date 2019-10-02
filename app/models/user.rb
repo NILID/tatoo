@@ -17,7 +17,7 @@ class User < ApplicationRecord
       exclusion: { in: LOGIN_BLACKLIST },
       length: { in: 3..100 }
 
-  validates_format_of :username, with: /^[a-zA-Z0-9а-яА-Я _\.]*$/, :multiline => true
+  validates_format_of :username, with: /^[a-zA-Z0-9а-яА-Я _\-\.]*$/, :multiline => true
 
   def login
     @login || self.username || self.email

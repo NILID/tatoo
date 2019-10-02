@@ -3,15 +3,10 @@
   %h3 Фильтрация
   = search_form_for(@q, url: profiles_path, html: { class: 'auto_submit' }) do |f|
     %p.lh По цене:
-    %p
-      %input{:type => "checkbox"}/
-      от 500 до 2000
-    %p
-      %input{:type => "checkbox"}/
-      от 2000 до 5000
-    %p
-      %input{:type => "checkbox"}/
-      от 5000 до 10 000
+    - [[500, 2000], [2000, 5000], [5000, 10000]].each do |price|
+      %p
+        = f.check_box :price_between, {checked: check_price_params(params[:q], price)}, price[0]..price[1], nil
+        = t('profiles.price', min: price[0], max: price[1])
     %br/
 
     %p.lh По цвету:

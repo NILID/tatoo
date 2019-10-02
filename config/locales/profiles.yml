@@ -11,6 +11,7 @@ ru:
     rotary: роторная машинка
     worktypes: 'Тип: %{worktype}'
     price: от %{min} до %{max}
+    price_and_size: "Цена: от %{price}р до %{size}см"
   plural:
     master_1: мастер
     master_2: мастера

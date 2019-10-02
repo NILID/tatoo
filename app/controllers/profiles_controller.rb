@@ -35,6 +35,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:price, :color, :work_type, :user_id)
+      params.require(:profile).permit(:price, :color, :work_type, :user_id, :tatoo_size)
     end
 end

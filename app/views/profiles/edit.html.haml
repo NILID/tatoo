@@ -1,4 +1,4 @@
-%h1 Editing profile
+%h3 Editing profile
 
 = form_for @profile do |f|
   - if @profile.errors.any?
@@ -11,6 +11,9 @@
   .field
     = f.label :price
     = f.number_field :price
+  .field
+    = f.label :tatoo_size
+    = f.number_field :tatoo_size
   .field
     = f.label :color
     = f.select :color, Profile::COLORS.map{|w| [get_profile_value(w), w]}, { include_blank: t('profiles.any_color') }

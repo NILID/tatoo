@@ -15,7 +15,7 @@ aleks = User.create!(username: 'Алексей Стриженов', email: 'alek
 elena = User.create!(username: 'Елена Сергиевич',   email: 'elena@tatoojmb.info', password: password, password_confirmation: password)
 
 # update profiles
-angel.profile.update!(price: 500, color: 'black', work_type: 'rotary')
-ivans.profile.update!(price: 2500,                work_type: 'induction')
-aleks.profile.update!(price: 8000,                work_type: 'rotary')
-elena.profile.update!(price: 500, color: 'black', work_type: 'handwork')
+angel.profile.update!(price: 500, color: 'black', tatoo_size: 5,  work_type: 'rotary')
+ivans.profile.update!(price: 2500,                tatoo_size: 10, work_type: 'induction')
+aleks.profile.update!(price: 8000,                tatoo_size: 50, work_type: 'rotary')
+elena.profile.update!(price: 500, color: 'black', tatoo_size: 5,  work_type: 'handwork')

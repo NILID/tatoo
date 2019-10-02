@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_053049) do
     t.integer "price"
     t.string "color", default: ""
     t.string "work_type"
+    t.integer "tatoo_size"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

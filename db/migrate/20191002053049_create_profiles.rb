@@ -4,6 +4,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.integer :price
       t.string :color, default: ''
       t.string :work_type
+      t.integer :tatoo_size, default: nil
       t.belongs_to :user, foreign_key: true
 
       t.timestamps

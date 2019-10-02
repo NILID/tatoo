@@ -5,6 +5,11 @@ RSpec.describe ApplicationHelper, type: :helper do
     expect(helper.get_profile_value('red')).to eq("красный")
   end
 
+  it "add space" do
+    expect(helper.int_space('100000')).to eq("100 000")
+  end
+
+
   describe "check plural" do
     it "with count equal 1" do
       expect(helper.plural(1, 'master')).to eq("1 мастер")

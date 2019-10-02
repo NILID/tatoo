@@ -6,7 +6,7 @@
     - [[500, 2000], [2000, 5000], [5000, 10000]].each do |price|
       %p
         = f.check_box :price_between, {checked: check_price_params(params[:q], price)}, price[0]..price[1], nil
-        = t('profiles.price', min: price[0], max: price[1])
+        = t('profiles.price', min: int_space(price[0]), max: int_space(price[1]))
     %br/
 
     %p.lh По цвету:

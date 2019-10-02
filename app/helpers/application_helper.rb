@@ -11,4 +11,8 @@ module ApplicationHelper
   def check_price_params(params, price)
     (params && params[:price_between].present?) && params[:price_between] == "#{price[0]}..#{price[1]}"
   end
+
+  def int_space(int)
+    number_with_delimiter(int, delimiter: ' ')
+  end
 end

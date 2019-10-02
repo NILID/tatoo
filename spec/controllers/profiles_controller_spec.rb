@@ -49,14 +49,6 @@ RSpec.describe ProfilesController, type: :controller do
     end
   end
 
-  describe "GET #show" do
-    it "returns a success response" do
-      profile = Profile.create! valid_attributes
-      get :show, params: {id: profile.to_param}, session: valid_session
-      expect(response).to be_successful
-    end
-  end
-
   describe "GET #edit" do
     it "returns a success response" do
       profile = Profile.create! valid_attributes
@@ -93,20 +85,4 @@ RSpec.describe ProfilesController, type: :controller do
       end
     end
   end
-
-  describe "DELETE #destroy" do
-    it "destroys the requested profile" do
-      profile = Profile.create! valid_attributes
-      expect {
-        delete :destroy, params: {id: profile.to_param}, session: valid_session
-      }.to change(Profile, :count).by(-1)
-    end
-
-    it "redirects to the profiles list" do
-      profile = Profile.create! valid_attributes
-      delete :destroy, params: {id: profile.to_param}, session: valid_session
-      expect(response).to redirect_to(profiles_url)
-    end
-  end
-
 end

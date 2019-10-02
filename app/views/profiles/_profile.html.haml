@@ -11,6 +11,4 @@
   %p.more
     = t('profiles.worktypes', worktype: get_profile_value(profile.work_type))
   %p
-    = link_to 'Show', profile
     = link_to 'Edit', edit_profile_path(profile)
-    = link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }

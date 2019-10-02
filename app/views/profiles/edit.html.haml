@@ -22,8 +22,3 @@
     = f.select :work_type, Profile::WORK_TYPES.map{|w| [get_profile_value(w), w]}, { include_blank: t('shared.select_choose') }
   .actions
     = f.submit 'Save'
-
-
-= link_to 'Show', @profile
-\|
-= link_to 'Back', profiles_path

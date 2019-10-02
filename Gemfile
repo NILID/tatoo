@@ -56,6 +56,11 @@ group :heroku do
   gem 'rails_12factor'
 end
 
+group :development, :test, :production do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rails-controller-testing'

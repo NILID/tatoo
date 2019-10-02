@@ -19,16 +19,12 @@
     - Profile::COLORS.each do |color|
       %p
         = f.check_box :color_eq_any, {}, color, nil
-        = color_name(color)
+        = get_profile_value(color)
 
     %br/
     %p.lh По типу выполнения:
-    %p
-      %input{:type => "checkbox"}/
-      машинка
-    %p
-      %input{:type => "checkbox"}/
-      ручная работа
-    %p
-      %input{:type => "checkbox"}/
-      индукционная машинка
+
+    - Profile::WORK_TYPES.each do |worktype|
+      %p
+        = f.check_box :work_type_eq_any, {}, worktype, nil
+        = get_profile_value(worktype)

@@ -13,10 +13,10 @@
     = f.number_field :price
   .field
     = f.label :color
-    = f.select :color, Profile::COLORS.map{|w| [color_name(w), w]}, { include_blank: t('profiles.any_color') }
+    = f.select :color, Profile::COLORS.map{|w| [get_profile_value(w), w]}, { include_blank: t('profiles.any_color') }
   .field
     = f.label :work_type
-    = f.select :work_type, Profile::WORK_TYPES.map{|w| [t("profiles.work_types.#{w}"), w]}, { include_blank: t('shared.select_choose') }
+    = f.select :work_type, Profile::WORK_TYPES.map{|w| [get_profile_value(w), w]}, { include_blank: t('shared.select_choose') }
   .actions
     = f.submit 'Save'
 

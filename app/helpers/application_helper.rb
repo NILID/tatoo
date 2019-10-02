@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def color_name(color)
-    t("profiles.#{color}")
+  def get_profile_value(val)
+    t("profiles.#{val}")
   end
 end

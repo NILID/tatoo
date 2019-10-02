@@ -6,7 +6,7 @@ ru:
     red: красный
     white: белый
     colors: 'Цвет: %{color}'
-    work_types:
-      induction: индукционная машинка
-      handwork: ручная работа
-      rotary: роторная машинка
+    induction: индукционная машинка
+    handwork: ручная работа
+    rotary: роторная машинка
+    worktypes: 'Тип: %{worktype}'

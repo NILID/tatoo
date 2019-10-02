@@ -11,8 +11,8 @@ describe User do
       expect(user.errors[:username]).not_to be_empty
     end
 
-    it 'have not username more 12' do
-      user.username = 'm' * 13
+    it 'have not username more 101' do
+      user.username = 'm' * 101
       expect(user.valid?).to be false
       expect(user.errors[:username]).not_to be_empty
     end

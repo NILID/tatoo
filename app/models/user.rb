@@ -11,7 +11,7 @@ class User < ApplicationRecord
       presence: true,
       uniqueness: { case_sensitive: false },
       exclusion: { in: LOGIN_BLACKLIST },
-      length: { in: 3..12 }
+      length: { in: 3..100 }
 
   validates_format_of :username, with: /^[a-zA-Z0-9а-яА-Я _\.]*$/, :multiline => true
 

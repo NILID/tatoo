@@ -1,0 +1,17 @@
+.box
+  .profile
+    .avatar.left
+    %p.left.name
+      = profile.username
+  .box-img{ style: "background-image:url(#{image_url('1.jpg')})" }
+  %p.more Цена: от 500р до 5см
+  %p.more
+    = t("profiles.colors.#{profile.color_name}")
+  %p.more
+    Тип: #{t("profiles.work_types.#{profile.work_type}")}
+
+  %p
+    = profile.price
+    = link_to 'Show', profile
+    = link_to 'Edit', edit_profile_path(profile)
+    = link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }

@@ -8,7 +8,14 @@
 
 password = 'qwerty444'
 
-elena = User.create!(username: 'Елена Сергиевич',   email: 'elena@tatoojmb.info', password: password, password_confirmation: password)
+# create users
 angel = User.create!(username: 'Ангелина Терехова', email: 'angel@tatoojmb.info', password: password, password_confirmation: password)
 ivans = User.create!(username: 'Иван Сидоров',      email: 'ivans@tatoojmb.info', password: password, password_confirmation: password)
 aleks = User.create!(username: 'Алексей Стриженов', email: 'aleks@tatoojmb.info', password: password, password_confirmation: password)
+elena = User.create!(username: 'Елена Сергиевич',   email: 'elena@tatoojmb.info', password: password, password_confirmation: password)
+
+# update profiles
+angel.profile.update!(price: 500, color: 'black', work_type: 'rotary')
+ivans.profile.update!(price: 2500,                work_type: 'induction')
+aleks.profile.update!(price: 8000,                work_type: 'rotary')
+elena.profile.update!(price: 500, color: 'black', work_type: 'handwork')

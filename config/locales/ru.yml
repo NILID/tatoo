@@ -1,4 +1,6 @@
 ru:
+  shared:
+    select_choose: == Выберите ==
   activerecord:
     models:
       user: пользователь

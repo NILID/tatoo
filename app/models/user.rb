@@ -1,9 +1,13 @@
 class User < ApplicationRecord
+  after_create  :create_profile
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :rememberable, :trackable and :omniauthable, :recoverable
   devise :database_authenticatable,
          :registerable,
          :validatable
+
+  has_one :profile
 
   attr_writer :login
 

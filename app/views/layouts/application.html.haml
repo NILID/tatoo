@@ -2,5 +2,20 @@
 %html(lang="ru")
   = render 'header'
   %body.page
-    = yield
+    %section#content
+      .menu
+        = link_to 'TMB', root_path, class: 'logo-text left'
+        .avatar.right
+        .right
+          = current_user.login
+          = link_to t('devise.logout'), destroy_user_session_path, method: :delete
+
+        .right.message{ title: "Сообщения"}
+        .right.marker{ title: "Закладки" }
+      .container
+        .filtration.left
+          = yield :sideblock
+        .master
+          = yield
+
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

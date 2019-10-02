@@ -1,0 +1,10 @@
+ru:
+  profiles:
+    any_color: любой
+    colors:
+      any: 'Цвет: любой'
+      black: 'Цвет: черный'
+    work_types:
+      induction: индукционная машинка
+      handwork: ручная работа
+      rotary: роторная машинка

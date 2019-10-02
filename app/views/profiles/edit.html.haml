@@ -1,0 +1,26 @@
+%h1 Editing profile
+
+= form_for @profile do |f|
+  - if @profile.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+      %ul
+        - @profile.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :price
+    = f.number_field :price
+  .field
+    = f.label :color
+    = f.select :color, Profile::COLORS, { include_blank: t('profiles.any_color') }
+  .field
+    = f.label :work_type
+    = f.select :work_type, Profile::WORK_TYPES.map{|w| [t("profiles.work_types.#{w}"), w]}, { include_blank: t('shared.select_choose') }
+  .actions
+    = f.submit 'Save'
+
+
+= link_to 'Show', @profile
+\|
+= link_to 'Back', profiles_path

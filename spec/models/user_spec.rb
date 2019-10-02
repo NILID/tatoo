@@ -46,5 +46,11 @@ describe User do
         expect(user.errors[:username]).not_to be_empty
       end
     end
+
+    it 'have profile after create' do
+      user.save!
+      expect(user.profile).not_to be_nil
+      expect(user.profile.valid?).to be true
+    end
   end
 end

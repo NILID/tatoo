@@ -2,6 +2,10 @@
 %html(lang="ru")
   = render 'header'
   %body.page
+    #flash
+      - flash.each do |key, value|
+        .flash-item= value
+
     %section#content
       .menu
         = link_to 'TMB', root_path, class: 'logo-text left'

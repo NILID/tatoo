@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[edit update]
 
   def index
-    @q = Profile.ransack(params[:q])
+    @q = Profile.where(active: true).ransack(params[:q])
     @profiles_count = @q.result(distinct: true).size
     @profiles = @q.result(distinct: true).paginate(page: params[:page], per_page: 2)
   end
@@ -27,6 +27,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:price, :color, :work_type, :user_id, :tatoo_size)
+      params.require(:profile).permit(:price, :color, :work_type, :user_id, :tatoo_size, :active)
     end
 end

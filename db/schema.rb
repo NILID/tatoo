@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_053049) do
+ActiveRecord::Schema.define(version: 2019_10_04_050106) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "price"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_053049) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

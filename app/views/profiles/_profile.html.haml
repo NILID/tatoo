@@ -3,7 +3,7 @@
     .avatar.left
     %p.left.name
       = profile.username
-  .box-img{ style: "background-image:url(#{image_url(random_img(profile.color))})" }
+  .box-img{ style: "background-image:url(#{image_url(profile.profile_img)})" }
   %p.more
     = t('profiles.price_and_size', price: profile.price, size: profile.tatoo_size)
   %p.more

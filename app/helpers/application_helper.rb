@@ -15,12 +15,4 @@ module ApplicationHelper
   def int_space(int)
     number_with_delimiter(int, delimiter: ' ')
   end
-
-  def random_img(color)
-    if color == 'black'
-      "#{rand(1..2)}.png"
-    else
-      "#{rand(3..4)}.png"
-    end
-  end
 end

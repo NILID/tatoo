@@ -3,9 +3,13 @@ module ApplicationHelper
     t("profiles.#{val}")
   end
 
+  def plural_with_count(count, value)
+    count.to_s + ' ' + plural(count, value)
+  end
+
   def plural(count, value, locale = I18n.locale)
-    val = "plural.#{value}"
-    count.to_s + ' ' + Russian.p(count, t("#{val}_1", locale: locale), t("#{val}_2", locale: locale), t("#{val}_10", locale: locale))
+    variants = [1, 2, 10].map { |int| t("plural.#{value}_#{int}", locale: locale)}
+    Russian.p(count, *variants)
   end
 
   def check_price_params(params, price)

@@ -11,16 +11,29 @@ RSpec.describe ApplicationHelper, type: :helper do
 
 
   describe "check plural" do
+    it "equal 1" do
+      expect(helper.plural(1, 'master')).to eq("мастер")
+    end
+
+    it "equal 2" do
+      expect(helper.plural(2, 'master')).to eq("мастера")
+    end
+
+    it "equal 10" do
+      expect(helper.plural(10, 'master')).to eq("мастеров")
+    end
+
     it "with count equal 1" do
-      expect(helper.plural(1, 'master')).to eq("1 мастер")
+      expect(helper.plural_with_count(1, 'master')).to eq("1 мастер")
     end
 
     it "with count equal 2" do
-      expect(helper.plural(2, 'master')).to eq("2 мастера")
+      expect(helper.plural_with_count(2, 'master')).to eq("2 мастера")
     end
 
     it "with count equal 10" do
-      expect(helper.plural(10, 'master')).to eq("10 мастеров")
+      expect(helper.plural_with_count(10, 'master')).to eq("10 мастеров")
     end
+
   end
 end

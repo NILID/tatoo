@@ -2,7 +2,7 @@
 
 = render 'filtration'
 
-%h3 #{t 'shared.finding'} #{plural(@profiles_count, 'master')}
+%h3 #{t 'shared.finding'} #{plural_with_count(@profiles_count, 'master')}
 
 - if @profiles.size > 0
   #profiles= render @profiles
